@@ -1,23 +1,44 @@
 import React from "react";
+import youtube from '../assets/youtube.jpg';
+import Fb from '../assets/Fb.png';
+import Spotify from '../assets/Spotify.png';
 
 function Footer() {
   return (
-    <footer className="bg-dark text-light py-5">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <div className="footer-title">The Generics</div>
-          </div>
-          <div className="col-12 col-md-6">
-            <div className="footer-icons">
-              <ul className="list-unstyled d-flex justify-content-end mb-0">
-                <li className="mr-3"><a href="https://www.youtube.com"><img src="./img/6260efc8fc9a9002669d2f4ad9956cc0.jpg" alt="" /></a></li>
-                <li className="mr-3"><a href="https://spotify.com"><img src="./img/Spotify Logo.png" alt="" /></a></li>
-                <li><a href="https://facebook.com"><img src="./img/Facebook Logo.png" alt="" /></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <footer className="d-flex mt-4 p-2 bg-info">
+      <div className="text-center text-white col-md-6 display-3 font-weight-bold mx-auto">
+        The Generics
+      </div>
+
+      <div className="col-md-6 d-flex align-items-center justify-content-around">
+        <ul className="list-unstyled d-flex">
+          <li className="px-2">
+            <a
+              className="text-primary cursor-pointer text-decoration-underline"
+              href="https://www.youtube.com"
+            >
+              <img className="img-fluid" src={youtube} alt="Youtube" style={{height: "40px"}}/>
+            </a>
+          </li>
+
+          <li className="px-2">
+            <a
+              className="text-primary cursor-pointer text-decoration-underline"
+              href="https://spotify.com"
+            >
+              <img src={Fb} alt="Fb" style={{height: "40px"}}/>
+            </a>
+          </li>
+
+          <li className="px-2">
+            <a
+              className="text-primary cursor-pointer text-decoration-underline"
+              href="https://facebook.com"
+            >
+              <img src={Spotify} alt="Spotify" style={{height: "40px"}}/>
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
   );
