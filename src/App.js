@@ -1,32 +1,31 @@
 import React, { useState } from "react";
-import Header from "./components/Layout/Header";
-import Section from "./components/Layout/Section";
-import Section2 from "./components/Layout/Section2";
-import Footer from "./components/Layout/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import HBF from "./components/UI/HBF";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./components/Store/CartProvider";
+import 'bootstrap/dist/css/bootstrap.css';
+
+
+// import UserList from './components/UserList';
+// import Registration from './components/Registration';
+// import Counter from './components/Counter';
 
 function App() {
+
   const [show, setShow] = useState(false);
 
   const showCartHandler = () => {
     setShow(true);
   };
 
-  const hideCartHandler = () => {
+  const HideCartHandler = () => {
     setShow(false);
   };
 
   return (
     <CartProvider>
-      <div>
-        <Header showCartHandler={showCartHandler} />
-        <Section />
-        <Section2 />
-        <Footer />
-        {show && <Cart onClose={hideCartHandler} />}
-      </div>
+      <HBF showCartHandler={showCartHandler} />
+      {show && <Cart onClose={HideCartHandler} showCart={showCartHandler} />}
     </CartProvider>
   );
 }
